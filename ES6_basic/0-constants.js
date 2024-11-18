@@ -8,7 +8,6 @@ export function taskFirst() {
   }
   
   export function taskNext() {
-    // Usamos let porque 'combination' cambia su valor con "+="
     let combination = 'But sometimes let';
     combination += getLast();
   
