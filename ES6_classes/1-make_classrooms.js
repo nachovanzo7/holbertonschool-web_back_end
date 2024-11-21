@@ -5,7 +5,7 @@ export default class ClassRoom
         this._maxStudentsSize = maxStudentsSize;
     }
 
-    initializeRooms() {
+    static initializeRooms() {
         const class1 = new ClassRoom(19);
         const class2 = new ClassRoom(20);
         const class3 = new ClassRoom(34);
