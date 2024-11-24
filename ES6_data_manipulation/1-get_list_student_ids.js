@@ -1,4 +1,5 @@
-export default function getListStudentIds(students) {
+export default function getListStudentIds(students)
+{
 
     if (!Array.isArray(students)) 
     {
@@ -7,4 +8,4 @@ export default function getListStudentIds(students) {
     }
 
     return students.map(student => student.id);
-  }
+}
