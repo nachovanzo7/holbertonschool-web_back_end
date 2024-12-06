@@ -1,6 +1,12 @@
 #!/usr/bin/env python3
+"""
+Python3
+"""
 
 import math
+"""
+Importacion recursos matematicos
+"""
 
 def floor(n: float) -> int:
     """
