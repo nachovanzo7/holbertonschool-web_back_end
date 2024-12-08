@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 """
-Este script define varias variables con anotaciones 
+Este script define varias variables con anotaciones
 de tipo
 
     a (int): Un número entero, inicializado con el valor 1.

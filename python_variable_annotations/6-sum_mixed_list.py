@@ -11,10 +11,10 @@ typing
 
 def sum_mixed_list(mxd_lst: List[Union[int, float]]) -> float:
     """
-    Calcula la suma de los elementos de una lista que contiene números enteros y decimales.
+    Calcula la suma de los elementos de una lista de int o float
 
     Args:
-        mxd_lst (List[Union[int, float]]): Lista de números que pueden ser enteros o flotantes.
+        mxd_lst (List[Union[int, float]]): Lista de números que int o float
 
     Returns:
         float: La suma total de los elementos en la lista.
