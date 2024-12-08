@@ -4,7 +4,7 @@ python
 """
 
 from typing import List, Union
-""" 
+"""
 typing
 """
 
