@@ -8,6 +8,7 @@ import math
 Importacion recursos matematicos
 """
 
+
 def floor(n: float) -> int:
     """
 

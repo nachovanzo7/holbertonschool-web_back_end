@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Python33
+Python3
 """
 def add(a: float, b: float) -> float:
     """
