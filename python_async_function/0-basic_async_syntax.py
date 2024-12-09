@@ -2,13 +2,13 @@
 """
 Python
 """
-import asyncio
-"""
-Modulo para tareas asincronas
-"""
 import random
 """
 Integracion a funciones asincronas
+"""
+import asyncio
+"""
+Modulo para tareas asincronas
 """
 
 
