@@ -24,7 +24,7 @@ def measure_time(n: int, max_delay: int) -> float:
     """
     lista = asyncio.run(wait_n(n, max_delay))
     suma = sum(lista)
-    
+
     if n > 0:
         return suma / n
     else:

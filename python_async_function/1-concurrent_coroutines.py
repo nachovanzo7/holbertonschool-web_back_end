@@ -2,9 +2,9 @@
 """
 Python
 """
-import asyncio
+import typing
 """
-Modulo para tareas asincronas
+typing
 """
 wait_random = __import__('0-basic_async_syntax').wait_random
 """
@@ -12,7 +12,7 @@ Funcion que devuelve los segundos de delay esperados
 """
 
 
-async def wait_n(n: int, max_delay: int):
+async def wait_n(n: int, max_delay: int) -> typing.List[float]:
     """_summary_
 
     Args:

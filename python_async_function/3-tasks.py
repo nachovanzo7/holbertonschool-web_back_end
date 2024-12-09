@@ -3,6 +3,7 @@
 Python
 """
 import asyncio
+import typing
 """
 Modulo para tareas asincronas
 """
@@ -12,7 +13,7 @@ Funcion que devuelve los segundos de delay esperados
 """
 
 
-def task_wait_random(max_delay: int):
+def task_wait_random(max_delay: int) -> asyncio.Task:
     """_summary_
 
     Args:
