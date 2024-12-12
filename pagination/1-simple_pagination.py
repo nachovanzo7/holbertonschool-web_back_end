@@ -1,6 +1,15 @@
+#!/usr/bin/env python3
+"""
+python
+"""
 import csv
-import math
+"""
+csv
+"""
 from typing import List
+"""
+typing -> List
+"""
 
 def index_range(page: int, page_size: int) -> tuple:
     """
