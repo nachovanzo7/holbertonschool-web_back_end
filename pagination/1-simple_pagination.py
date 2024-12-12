@@ -2,14 +2,15 @@
 """
 python
 """
-import csv
-"""
-csv
-"""
 from typing import List
 """
 typing -> List
 """
+import csv
+"""
+csv
+"""
+
 
 def index_range(page: int, page_size: int) -> tuple:
     """
@@ -54,8 +55,8 @@ class Server:
         Returns:
             List[List]: dataset
         """
-        assert isinstance(page, int) and page > 0, "Page debe ser un entero positivo"
-        assert isinstance(page_size, int) and page_size > 0, "Tamaño de pagina debe ser un entero positivo"
+        assert isinstance(page, int) and page > 0, "Page positivo"
+        assert isinstance(page_size, int) and page_size > 0, "size positivo"
 
         start, end = index_range(page, page_size)
         dataset = self.dataset()
