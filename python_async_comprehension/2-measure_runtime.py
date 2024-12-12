@@ -4,6 +4,10 @@ Python
 """
 import asyncio
 
+import typing
+"""
+typing
+"""
 
 async_comprehension = __import__('1-async_comprehension').async_comprehension
 """
@@ -11,7 +15,7 @@ Async_comprehension
 """
 
 
-async def measure_runtime() -> float:
+async def measure_runtime() -> typing.List[float]:
     """
 
     Returns:
