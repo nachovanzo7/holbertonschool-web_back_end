@@ -33,8 +33,10 @@ class Server:
     """Server class to paginate a database of popular baby names."""
     DATA_FILE = "Popular_Baby_Names.csv"
 
+
     def __init__(self):
         self.__dataset = None
+
 
     def dataset(self) -> List[List]:
         """Cached dataset."""
@@ -45,6 +47,7 @@ class Server:
             self.__dataset = dataset[1:]
 
         return self.__dataset
+
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """
@@ -67,7 +70,17 @@ class Server:
 
         return dataset[start:end]
 
+
     def get_hyper(self, page: int = 1, page_size: int = 10) -> dict:
+        """
+
+        Args:
+            page (int, optional): Pagina actual. Defaults to 1.
+            page_size (int, optional): Longitud de pagina. Defaults to 10.
+
+        Returns:
+            dict: Diccionario con valores
+        """
         data_set = self.get_page(page, page_size)
         
         long = len(self.dataset())
