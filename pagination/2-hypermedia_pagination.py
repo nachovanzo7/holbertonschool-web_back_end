@@ -35,7 +35,7 @@ def index_range(page: int, page_size: int) -> tuple:
 class Server:
     """Server class to paginate a database of popular baby names."""
     DATA_FILE = "Popular_Baby_Names.csv"
-    
+
     def __init__(self):
         self.__dataset = None
 
@@ -81,10 +81,10 @@ class Server:
             dict: Diccionario con valores
         """
         data_set = self.get_page(page, page_size)
-        
+  
         long = len(self.dataset())
         paginas = math.ceil(long / page_size)
-                
+          
         dictionary = {
             "page_size": len(data_set),
             "page": page,
@@ -93,5 +93,5 @@ class Server:
             "prev_page": page - 1 if page > 1 else None,
             "total_pages": paginas
         }
-        
+  
         return dictionary
