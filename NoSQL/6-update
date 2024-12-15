@@ -5,4 +5,4 @@ var result = db.school.updateMany(
     {$set: {address: "972 Mission street"}}
 );
 
-print("WriteResult({ \"nInserted\" : " + (result.acknowledged ? 1 : 0) + " })");
+print("WriteResult({ \"nInserted\" : " + (result.acknowledged ? 1 : 0) + " })");
