@@ -5,5 +5,4 @@ var result = db.school.updateMany(
     {$set: {address: "972 Mission street"}}
 );
 
-//arreglar lo del checker
-print("WriteResult({ \"nMatched\" : " + result.matchedCount + ", \"nUpserted\" : " + result.upsertedCount + ", \"nModified\" : " + result.modifiedCount + " })");
+print("WriteResult({ \"nInserted\" : " + (result.acknowledged ? 1 : 0) + " })");
