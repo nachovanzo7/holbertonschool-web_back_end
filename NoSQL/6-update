@@ -1,3 +1,9 @@
 // my comment
 
-db.school.updateMany({name: "Holberton school"}, {$set: {address: "972 Mission street"}})
+var result = db.school.updateMany(
+    {name: "Holberton school"},
+    {$set: {address: "972 Mission street"}}
+);
+
+//arreglar lo del checker
+print("WriteResult({ \"nMatched\" : " + result.matchedCount + ", \"nUpserted\" : " + result.upsertedCount + ", \"nModified\" : " + result.modifiedCount + " })");
