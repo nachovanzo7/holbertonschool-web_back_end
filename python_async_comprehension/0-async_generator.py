@@ -1,25 +1,20 @@
 #!/usr/bin/env python3
 """
-Python
+python
 """
+
 import random
-from typing import AsyncGenerator
-"""
-Integracion a funciones asincronas
-"""
 import asyncio
-"""
-Modulo para tareas asincronas
-"""
+from typing import AsyncGenerator
 
 
 async def async_generator() -> AsyncGenerator[float, None]:
     """
+    Generador asincrono entre 0 and 10.
 
     Yields:
-        AsyncGenerator: generador
+        float: Random float
     """
-    for i in range(10):
-        await asyncio.sleep(1)
-        num = random.uniform(0, 10)
-        yield num
+    for _ in range(10):
+        await asyncio.sleep(1)  # Simulate asynchronous operation
+        yield random.uniform(0, 10)
