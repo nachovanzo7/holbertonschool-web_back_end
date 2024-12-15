@@ -3,22 +3,30 @@
 Python
 """
 
-async_comprehension = __import__('1-async_comprehension').async_comprehension
 import asyncio
-import typing
+import time
+from typing import List
+
+async_comprehension = __import__('1-async_comprehension').async_comprehension
 
 
-async def measure_runtime() -> typing.List[float]:
+async def measure_runtime() -> float:
     """
+    Measure the total runtime of running async_comprehension four times in parallel.
 
     Returns:
-        float: tiempo de ejecucion
+        float: Total runtime in seconds.
     """
-    comienzo = asyncio.get_event_loop().time()
-    
-    await asyncio.gather(async_comprehension(), async_comprehension(), 
-                         async_comprehension(), async_comprehension())
+    comienzo = time.perf_counter() #Medir mas preciso que event_loop
 
-    fin = asyncio.get_event_loop().time()
+    # Ejecutar cuatro tareas en paralelo
+    await asyncio.gather(
+        async_comprehension(),
+        async_comprehension(),
+        async_comprehension(),
+        async_comprehension()
+    )
+
+    fin = time.perf_counter()
     
     return fin - comienzo
