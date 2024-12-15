@@ -1,9 +1,10 @@
 // my comment
 
-var result = db.school.updateMany(
-    {name: "Holberton school"},
-    {$set: {address: "972 Mission street"}}
+var result = db.school.update(
+    { name: "Holberton school" }, // Filtro
+    { $set: { address: "972 Mission street" } }, // Actualización
+    { multi: true } // Opciones para permitir múltiples actualizaciones
 );
 
 // Mimic the WriteResult output format
-print("WriteResult({ \"nInserted\" : " + (result.acknowledged ? 1 : 0) + " })");
+print("WriteResult({ \"nInserted\" : " + (result.acknowledged ? 1: 0) + "})");
