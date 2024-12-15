@@ -2,10 +2,12 @@
 """
 python
 """
+
 from typing import List, Dict
 """
 typing
 """
+
 import csv
 """
 csv
@@ -54,7 +56,7 @@ class Server:
         Returns:
             dict: información sobre la página y metadatos
         """
-        assert isinstance(index, int) and index >= 0, "El índice debe ser un entero no negativo."
+        assert isinstance(index, int) and index >= 0, "entero no negativo."
 
         info_index = self.indexed_dataset()
         keys = sorted(info_index.keys())
@@ -77,7 +79,8 @@ class Server:
             if i < len(keys):
                 data.append(info_index[keys[i]])
 
-        sig_index = keys[start_idx + page_size] if start_idx + page_size < len(keys) else None
+        sig_index = keys[start_idx + page_size] 
+        if start_idx + page_size < len(keys) else None
 
         return {
             "index": index,
