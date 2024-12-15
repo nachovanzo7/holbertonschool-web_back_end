@@ -1,17 +1,11 @@
 #!/usr/bin/env python3
 """
-python
+Hypermedia pagination for a dataset of popular baby names.
 """
 
-from typing import List
-"""
-typing -> List
-"""
-
+from typing import List, Dict  # Importaciones al inicio
 import csv
-"""
-csv
-"""
+import math
 
 
 def index_range(page: int, page_size: int) -> tuple:
