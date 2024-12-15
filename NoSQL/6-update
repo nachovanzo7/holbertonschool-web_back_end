@@ -7,4 +7,6 @@ var result = db.school.update(
 );
 
 // Mimic the WriteResult output format
-print("WriteResult({ \"nInserted\" : " + (result.acknowledged ? 1: 0) + "})");
+print("WriteResult({ \"nMatched\" : " + result.nMatched +
+      ", \"nUpserted\" : " + result.nUpserted +
+      ", \"nModified\" : " + result.nModified + " })");
