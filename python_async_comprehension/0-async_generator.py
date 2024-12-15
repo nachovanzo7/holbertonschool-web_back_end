@@ -1,18 +1,20 @@
-#!/usr/bin/env python3
-"""
-Python
-"""
-
-import random
-from typing import Generator
-
-
-def async_generator() -> Generator[float, None, None]:
+    #!/usr/bin/env python3
     """
-    Generador síncrono que produce números aleatorios entre 0 y 10.
-
-    Yields:
-        float: Random float.
+    python
     """
-    for _ in range(10):
-        yield random.uniform(0, 10)
+
+    import random
+    import asyncio
+    from typing import Generator
+
+
+    async def async_generator() -> Generator[float, None, None]:
+        """
+        Generador asincrono entre 0 and 10.
+
+        Yields:
+            float: Random float
+        """
+        for _ in range(10):
+            await asyncio.sleep(1)  # Simulate asynchronous operation
+            yield random.uniform(0, 10)
