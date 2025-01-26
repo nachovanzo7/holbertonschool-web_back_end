@@ -1,34 +1,42 @@
-const fs = require('fs').promises;
+const fs = require('fs');
 
-async function countStudents(path) {
-    try {
-        const data = await fs.readFile(path, 'utf8');
-        
+function countStudents(path) {
+  return new Promise((resolve, reject) => {
+    fs.readFile(path, 'utf8', (err, data) => {
+      if (err) {
+        reject(new Error('Cannot load the database'));
+        return;
+      }
+
+      try {
         const lines = data.trim().split('\n');
+        const students = lines.slice(1); // Ignorar la primera línea con los encabezados
 
-        const students = lines.slice(1).filter(line => line.trim() !== ''); // Ignorar la primera línea (cabecera)
-
-        const totalStudents = students.length;
-
-        console.log(`Number of students: ${totalStudents}`);
+        console.log(`Number of students: ${students.length}`);
 
         const fields = {};
 
-        students.forEach((student) => {
-            const [firstname, field] = student.split(',');
-            if (fields[field]) {
-                fields[field].push(firstname);
-            } else {
-                fields[field] = [firstname];
-            }
-        });
+        for (const line of students) {
+          const [name, , , field] = line.split(',');
 
-        for (const field in fields) {
-            console.log(`Number of students in ${field}: ${fields[field].length}. List: ${fields[field].join(', ')}`);
+          if (!fields[field]) {
+            fields[field] = [];
+          }
+          fields[field].push(name);
         }
-    } catch (error) {
-        throw new Error('Cannot load the database');
-    }
+
+        // Mostrar la cantidad de estudiantes por campo
+        for (const field in fields) {
+          const names = fields[field];
+          console.log(`Number of students in ${field}: ${names.length}. List: ${names.join(', ')}`);
+        }
+
+        resolve();
+      } catch (error) {
+        reject(new Error('Cannot process the database'));
+      }
+    });
+  });
 }
 
 module.exports = countStudents;
